@@ -35,9 +35,6 @@
     "sequelize": "^6.37.2",
     "sequelize-typescript": "^2.1.6"
   },
-  "engines": {
-    "node": "18.x"
-  },
   "devDependencies": {
     "@nestjs/cli": "^10.3.2",
     "@nestjs/schematics": "^10.0.0",
