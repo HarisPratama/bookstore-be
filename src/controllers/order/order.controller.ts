@@ -98,7 +98,7 @@ export class OrderController {
       const user = await this.userService.findById(req.user.id);
       const payloadUpdateUserPoint = {
         ...req.user,
-        point: user.point + book.point,
+        point: +user.point + +book.point,
       };
 
       await this.userService.update(payloadUpdateUserPoint);
@@ -107,6 +107,8 @@ export class OrderController {
       res.status(201).json({
         status: 'success',
         message: 'Success canceled order',
+        data: payloadUpdateUserPoint,
+        book: book.point,
       });
     } catch (error) {
       res.status(HttpStatus.BAD_REQUEST).json({
